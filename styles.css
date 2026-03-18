@@ -60,6 +60,8 @@ a{color:inherit}
 .panel p,.step p,.write-card p,.choice-card p{color:var(--muted)}
 .muted{color:var(--muted)}
 .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;margin-bottom:10px}
+.badge-extra{background:var(--green-soft);color:var(--green);border:1px solid #bfdec8}
+.extra-card{border-color:#bfdec8;border-left:4px solid var(--green)}
 .home-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
 .chapter-card{padding:18px;text-decoration:none;display:block}
 .chapter-card h3{margin:.2rem 0;font-size:1.15rem}

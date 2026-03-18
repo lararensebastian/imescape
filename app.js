@@ -61,7 +61,13 @@ const DDR = (() => {
         'Jag har skrivit i jag-form.',
         'Sam finns med i texten.',
         'Jag har beskrivit både plats och tanke.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: Sams version',
+        prompt: 'Skriv om samma lektion – men ur Sams perspektiv. Vad ser Sam? Vad tänker Sam om dig? Skriv i jag-form som Sam.',
+        starters: ['Jag heter Sam och sitter bredvid ...', 'Läraren pratar om något och jag ...', 'Personen bredvid mig verkar ...'],
+        placeholder: 'Skriv minst 5 meningar ur Sams perspektiv.'
+      }
     },
     {
       id: 2,
@@ -123,7 +129,13 @@ const DDR = (() => {
         'Jag har beskrivit kvällen tydligt.',
         'Jag har tänkt källkritiskt i texten.',
         'Jag har skrivit vad jag svarar.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: Aidens sida',
+        prompt: 'Tänk dig att Aiden är en riktig person – men inte den du trodde. Skriv ett kort avsnitt ur Aidens perspektiv. Vad tänker Aiden när du svarar? Vad är syftet egentligen?',
+        starters: ['Jag heter inte riktigt Aiden, men ...', 'När personen svarar tänker jag ...', 'Mitt syfte med kontot är att ...'],
+        placeholder: 'Skriv 4–6 meningar ur Aidens perspektiv.'
+      }
     },
     {
       id: 3,
@@ -185,7 +197,13 @@ const DDR = (() => {
         'Jag har en tydlig åsikt.',
         'Jag har minst två argument.',
         'Jag har avslutat tydligt.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: Skriv Sams argument',
+        prompt: 'Sam tycker tvärtom mot dig i en av dina åsikter. Skriv Sams motargument som ett litet brev eller ett inlägg i en diskussion. Använd tecken som: Å andra sidan, Jag anser att, Däremot.',
+        starters: ['Jag håller inte med. Jag anser att ...', 'Å andra sidan måste man tänka på ...', 'Däremot tror jag att unga ...'],
+        placeholder: 'Skriv 4–6 meningar som Sam, med ett tydligt motargument.'
+      }
     },
     {
       id: 4,
@@ -247,7 +265,13 @@ const DDR = (() => {
         'Jag har en tydlig plats i början.',
         'Jag har minst fyra steg.',
         'Jag visar vad vi upptäcker.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: Skriv instruktionen till någon annan',
+        prompt: 'Du ska förklara för en yngre elev hur man undersöker ett okänt konto online. Skriv en kort guide med tydliga steg – som om du pratar direkt till den eleven.',
+        starters: ['Om du får ett meddelande från någon du inte känner, gör så här:', '1. Börja med att ...', 'Det viktigaste är att aldrig ...'],
+        placeholder: 'Skriv en guide med minst 4 steg, riktad till en yngre elev.'
+      }
     },
     {
       id: 5,
@@ -308,7 +332,13 @@ const DDR = (() => {
         'Jag har skrivit dialog med tankstreck.',
         'Jag har med en paus eller tystnad.',
         'Jag har reflekterat över syftet.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: En scen som inte hände',
+        prompt: 'Skriv en alternativ version: du och Sam hittar ingenting konstigt. Du tror att Aiden är äkta och bestämmer dig för att träffas. Skriv scenen – vad händer när ni möts?',
+        starters: ['Vi ses utanför ett café och ...', 'Personen ser ut precis som ...', 'Något känns fel direkt när ...'],
+        placeholder: 'Skriv 5–8 meningar om mötet som aldrig borde ha skett.'
+      }
     },
     {
       id: 6,
@@ -369,7 +399,13 @@ const DDR = (() => {
         'Jag knyter ihop med kapitel 1.',
         'Jag säger tydligt vad andra borde tänka på.',
         'Jag avslutar med en tydlig insikt.'
-      ]
+      ],
+      extra: {
+        title: 'Extraspår: Brevet du aldrig skickade',
+        prompt: 'Skriv ett brev direkt till Aiden – nu när du vet vem Aiden egentligen är. Vad vill du säga? Du behöver inte vara snäll. Du kan vara arg, besviken, eller bara klok.',
+        starters: ['Hej Aiden. Nu vet jag vad du egentligen ville.', 'Du trodde säkert att jag skulle ...', 'Det du inte visste om mig är att ...'],
+        placeholder: 'Skriv brevet till Aiden – minst 5 meningar.'
+      }
     }
   ];
 
@@ -423,6 +459,10 @@ const DDR = (() => {
   function getFullText(chapterId) {
     const obj = state.texts[chapterId] || {};
     return ['del1', 'del2', 'del3'].map(key => (obj[key] || '').trim()).filter(Boolean).join('\n\n');
+  }
+
+  function getExtraText(chapterId) {
+    return ((state.texts[chapterId] || {})["extra"] || "").trim();
   }
 
   function wordCount(text) {
@@ -505,11 +545,18 @@ const DDR = (() => {
       const paragraphs = text
         ? text.split(/\n{2,}/).map(p => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`).join('')
         : '<p><em>Inte skrivet ännu.</em></p>';
+      const extraText = getExtraText(ch.id);
+      const extraSection = (ch.extra && extraText) ? `
+        <div style="margin-top:18px;padding:16px 20px;background:#f4e3db;border-radius:12px;border-left:4px solid #a94d2a;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#a94d2a;font-weight:800;margin-bottom:6px">Extraspår: ${ch.extra.title.replace('Extraspår: ','')}</div>
+          ${extraText.split(/\n{2,}/).map(p => `<p style="margin:0 0 10px">${escapeHtml(p).replace(/\n/g, '<br>')}</p>`).join('')}
+        </div>` : '';
       return `
         <section style="margin:0 0 40px;page-break-inside:avoid;">
           <div style="font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:#7a6f63;margin-bottom:8px">Kapitel ${ch.id} · ${ch.genre}</div>
           <h2 style="font-size:30px;margin:0 0 14px;letter-spacing:-.03em">${ch.title}</h2>
           ${paragraphs}
+          ${extraSection}
         </section>`;
     }).join('');
 
@@ -544,6 +591,12 @@ const DDR = (() => {
       lines.push('-'.repeat(40));
       const text = getFullText(ch.id);
       lines.push(text || '(Inte skrivet ännu.)');
+      const extraText = getExtraText(ch.id);
+      if (ch.extra && extraText) {
+        lines.push('');
+        lines.push(`[${ch.extra.title}]`);
+        lines.push(extraText);
+      }
       lines.push('');
       lines.push('='.repeat(60));
     });
@@ -658,6 +711,17 @@ const DDR = (() => {
     const vocabHtml = ch.vocab.map(([word, meaning]) => `<div class="vocab-item"><strong>${word}</strong><div class="small muted">${meaning}</div></div>`).join('');
     const easyHelpHtml = `<ul class="bullets">${ch.easyHelp.map(item => `<li>${item}</li>`).join('')}</ul>`;
 
+    const extraValue = getText(id, 'extra');
+    const extraHtml = ch.extra ? `
+      <section class="write-card extra-card" style="margin-top:18px">
+        <div class="badge badge-extra">Vill du göra mer?</div>
+        <h2>${ch.extra.title}</h2>
+        <p>${ch.extra.prompt}</p>
+        <div class="starter-row">${ch.extra.starters.map(st => `<button type="button" class="starter" onclick="DDR.insertStarter(${id}, 'extra', ${JSON.stringify(st)})">${st}</button>`).join('')}</div>
+        <textarea data-chapter="${id}" data-key="extra" placeholder="${ch.extra.placeholder}">${extraValue}</textarea>
+        <div class="small muted" style="margin-top:8px">Texten sparas automatiskt och följer med i exporten.</div>
+      </section>` : '';
+
     document.getElementById('app').innerHTML = `
       <div id="save-indicator" class="save-indicator">Sparat ✓</div>
 
@@ -735,7 +799,9 @@ const DDR = (() => {
           ${id > 1 ? `<a class="btn" href="kapitel-${id - 1}.html">← Föregående</a>` : `<a class="btn" href="index.html">← Start</a>`}
           ${id < chapters.length ? `<a class="btn btn-primary" href="kapitel-${id + 1}.html">Nästa kapitel →</a>` : `<a class="btn btn-primary" href="index.html">Till startsidan</a>`}
         </div>
-      </section>`;
+      </section>
+
+      ${extraHtml}`;
 
     document.querySelectorAll('textarea').forEach(area => {
       area.addEventListener('input', event => {
