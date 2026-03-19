@@ -640,7 +640,7 @@ const DDR = (() => {
       <section class="hero">
         <div class="kicker">Svenska · färdigt elevprojekt</div>
         <h1>Den Digitala <span style="color:var(--accent)">Rösten</span></h1>
-        <p>Sex kapitel. En sammanhängande berättelse. Mindre rörigt, tydligare steg och mer stöd för språksvaga elever och elever med NPF.</p>
+        <p>Sex kapitel. En sammanhängande berättelse.</p>
         <div class="help-toggle">
           <button class="btn btn-primary" onclick="DDR.exportBook()">Exportera som bok</button>
           <button class="btn btn-blue" onclick="DDR.backupTxt()">💾 Spara backup (.txt)</button>
