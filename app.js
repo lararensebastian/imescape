@@ -138,99 +138,144 @@ const DDR = (() => {
       }
     },
     {
-  id: 3,
-  slug: 'kapitel-3.html',
-  title: 'Aiden frågar mer',
-  genre: 'Berättande text',
-  goalWords: 120,
-  intro: 'Aiden skriver igen, men nu känns det annorlunda.',
-  story: [
-    'Det går några dagar. Aiden skriver igen.',
-    'Frågorna handlar fortfarande om åsikter, men nu känns det mer personligt.',
-    'Sam tittar på dig. "Du behöver inte svara på allt", säger hen.'
-  ],
-  callouts: [
-    { type: 'danger', title: 'Ny fråga från Aiden', text: '"Tycker du att unga i Sverige har tillräckligt att säga till om?"' }
-  ],
-  choiceQuestion: 'Hur väljer du att svara?',
-  choices: [
-    { id: 'A', text: 'Jag svarar långt och tydligt med min åsikt.' },
-    { id: 'B', text: 'Jag svarar kort och ganska allmänt.' },
-    { id: 'C', text: 'Jag svarar nästan inte alls eftersom det känns fel.' }
-  ],
-  tasks: [
-    {
-      key: 'del1',
-      title: '1. Visa hur du reagerar',
-      help: 'Vad tänker du när Aiden frågar mer?',
-      starters: ['Jag läser frågan och tänker ...', 'Det känns konstigt att ...', 'Jag vet inte om jag borde ...'],
-      placeholder: 'Skriv 2–4 meningar.'
+      id: 3,
+      slug: 'kapitel-3.html',
+      title: 'Aiden frågar mer',
+      genre: 'Berättande text',
+      goalWords: 120,
+      intro: 'Aiden skriver igen, men nu känns det annorlunda.',
+      story: [
+        'Det går några dagar. Aiden skriver igen.',
+        'Den här gången känns frågorna mer personliga än förut.',
+        'Sam tittar på dig och säger att du inte måste svara på allt.'
+      ],
+      callouts: [
+        { type: 'danger', title: 'Ny fråga från Aiden', text: '"Tycker du att unga i Sverige har tillräckligt att säga till om? Inte bara på pappret, utan på riktigt?"' },
+        { type: 'info', title: 'Sam', text: '"Du kan svara mycket, lite eller inte alls. Det är också ett val."' }
+      ],
+      choiceQuestion: 'Hur väljer du att svara?',
+      choices: [
+        { id: 'A', text: 'Jag svarar långt och tydligt med min åsikt.' },
+        { id: 'B', text: 'Jag svarar kort och ganska allmänt.' },
+        { id: 'C', text: 'Jag svarar nästan inte alls eftersom det känns fel.' }
+      ],
+      tasks: [
+        {
+          key: 'del1',
+          title: '1. Visa hur du reagerar',
+          help: 'Vad tänker du när Aiden frågar mer? Visa om du vill svara mycket, lite eller nästan inte alls.',
+          starters: ['Jag läser frågan och tänker ...', 'Det känns konstigt att ...', 'Jag vet inte om jag borde ...'],
+          placeholder: 'Skriv 2–4 meningar om din reaktion.'
+        },
+        {
+          key: 'del2',
+          title: '2. Skriv ditt svar',
+          help: 'Anpassa svaret efter ditt val. Du kan skriva långt, kort eller nästan inget alls.',
+          starters: ['Jag skriver: "..."', 'Jag svarar kort: "..."', 'Jag skriver nästan inget alls: "..."'],
+          placeholder: 'Skriv det svar du faktiskt skickar.'
+        },
+        {
+          key: 'del3',
+          title: '3. Avsluta',
+          help: 'Hur känns det efteråt? Litar du mer eller mindre på Aiden nu?',
+          starters: ['Efteråt känner jag ...', 'Nu tänker jag att ...', 'Det här gör att jag ...'],
+          placeholder: 'Skriv 2–4 meningar som avslutning.'
+        }
+      ],
+      easyHelp: [
+        'Du måste inte skriva ett långt svar i berättelsen.',
+        'Ditt val ska märkas i texten: långt, kort eller nästan inget svar.',
+        'Skriv hellre tydligt än svårt.'
+      ],
+      example: 'Jag läser frågan flera gånger. Först tänker jag att den verkar vanlig, men sedan känns den för personlig. Jag vill inte skriva för mycket till någon jag inte känner. Till slut svarar jag kort: "Jag vet inte riktigt. Kanske ibland, men inte alltid." Efteråt känner jag mig fortfarande osäker.',
+      vocab: [
+        ['reaktion', 'det du känner eller tänker direkt'],
+        ['allmänt', 'inte så personligt eller detaljerat'],
+        ['osäker', 'när du inte riktigt vet vad du ska tro']
+      ],
+      checklist: [
+        'Jag har visat hur jag reagerar.',
+        'Mitt svar passar med mitt val.',
+        'Jag har avslutat med en känsla eller tanke.'
+      ],
+      extra: {
+        title: 'Extraspår: Sams version',
+        prompt: 'Sam får läsa frågan från Aiden och tycker att du borde göra annorlunda. Skriv några meningar där Sam förklarar hur hen skulle ha svarat.',
+        starters: ['Om jag var du skulle jag ...', 'Jag tycker inte att du ska ...', 'Det smartaste vore att ...'],
+        placeholder: 'Skriv 4–6 meningar som Sam.'
+      }
     },
     {
-      key: 'del2',
-      title: '2. Skriv ditt svar',
-      help: 'Anpassa efter ditt val (långt, kort eller inget).',
-      starters: ['Jag skriver: "..."', 'Jag svarar kort: "..."', 'Jag skriver inget, men tänker att ...'],
-      placeholder: 'Skriv det svar du skickar.'
+      id: 4,
+      slug: 'kapitel-4.html',
+      title: 'Något stämmer inte',
+      genre: 'Berättande text',
+      goalWords: 120,
+      intro: 'Du och Sam går tillbaka till hela chatten och ser saker ni inte reagerade på förut.',
+      story: [
+        'Du och Sam läser igenom hela konversationen med Aiden från början.',
+        'Nu när ni ser allt i ordning märker ni detaljer som först verkade små.',
+        'Vissa formuleringar återkommer. Några ord passar inte riktigt in. Plötsligt känns allt annorlunda.'
+      ],
+      callouts: [
+        { type: 'warn', title: 'Meddelande 1', text: '"Hej! Jag heter Aiden. Jag gör ett litet projekt och vill höra hur unga tänker om samhället."' },
+        { type: 'warn', title: 'Meddelande 2', text: '"Du verkar smart. Jag tror att du förstår mer än andra i din ålder."' },
+        { type: 'warn', title: 'Meddelande 3', text: '"Det är viktigt att prata med rätt personer. Vissa vuxna lyssnar ändå inte."' },
+        { type: 'danger', title: 'Meddelande 4', text: '"Vi borde ses och ta en kaffe. Ditt perspektiv är viktigt för projektet." Ett konstigt ord dyker upp och raderas snabbt.' },
+        { type: 'info', title: 'Sam', text: '"Ser du? Först smickrar kontot dig. Sedan försöker det påverka dig. Det här känns inte slumpmässigt."' }
+      ],
+      choiceQuestion: 'Vad reagerar du mest på när ni läser allt igen?',
+      choices: [
+        { id: 'A', text: 'Hur Aiden försöker smickra dig.' },
+        { id: 'B', text: 'Hur meddelandena försöker påverka hur du tänker.' },
+        { id: 'C', text: 'Att Aiden vill träffas och att något känns planerat.' }
+      ],
+      tasks: [
+        {
+          key: 'del1',
+          title: '1. Vad ser ni nu?',
+          help: 'Beskriv vad du och Sam märker när ni läser meddelandena igen.',
+          starters: ['När vi läser allt igen ser jag att ...', 'Sam märker att ...', 'Det jag inte tänkte på förut var att ...'],
+          placeholder: 'Skriv 2–4 meningar om det första ni upptäcker.'
+        },
+        {
+          key: 'del2',
+          title: '2. Vilka bevis hittar ni?',
+          help: 'Använd meddelandena ovan. Beskriv två eller tre saker som verkar konstiga eller farliga.',
+          starters: ['Ett bevis är att ...', 'En annan sak vi märker är att ...', 'Det blir tydligt när Aiden skriver ...'],
+          placeholder: 'Skriv 4–6 meningar om bevisen.'
+        },
+        {
+          key: 'del3',
+          title: '3. Vad tänker du nu?',
+          help: 'Vad börjar du förstå om Aiden och syftet med kontakten?',
+          starters: ['Nu börjar jag förstå att ...', 'Jag tror att Aiden vill ...', 'Det känns som att ...'],
+          placeholder: 'Skriv 2–4 meningar som avslutning.'
+        }
+      ],
+      easyHelp: [
+        'Du behöver inte hitta på allt själv. Använd meddelandena ovan.',
+        'Skriv om det som verkar konstigt: smicker, påverkan, möte, konstigt ord.',
+        'Välj en sak att fokusera på först.'
+      ],
+      example: 'När vi läser allt igen ser jag att Aiden försöker låta vänlig men också styra samtalet. Sam märker att kontot först smickrar mig och sedan försöker få mig att tvivla på vuxna. Ett bevis är att Aiden skriver att vissa vuxna ändå inte lyssnar. Ett annat bevis är att Aiden vill träffas. Nu börjar jag förstå att det kanske aldrig handlade om ett vanligt projekt.',
+      vocab: [
+        ['bevis', 'något som visar att något är sant eller misstänkt'],
+        ['smickra', 'att få någon att känna sig speciell för att vinna förtroende'],
+        ['påverka', 'att försöka styra hur någon tänker eller känner']
+      ],
+      checklist: [
+        'Jag har visat vad vi upptäcker.',
+        'Jag har beskrivit minst två bevis.',
+        'Jag har avslutat med vad jag börjar förstå.'
+      ],
+      extra: {
+        title: 'Extraspår: Sams anteckningar',
+        prompt: 'Tänk att Sam skriver snabba anteckningar medan ni läser chatten. Skriv en kort lista eller kort text med det Sam vill spara som bevis.',
+        starters: ['Bevis 1: ...', 'Bevis 2: ...', 'Det viktigaste vi såg var att ...'],
+        placeholder: 'Skriv 4–6 rader som Sams anteckningar.'
+      }
     },
-    {
-      key: 'del3',
-      title: '3. Avsluta',
-      help: 'Hur känns det efteråt?',
-      starters: ['Efteråt känner jag ...', 'Nu tänker jag att ...'],
-      placeholder: 'Skriv 2–4 meningar.'
-    }
-  ],
-},
-  {
-  id: 4,
-  slug: 'kapitel-4.html',
-  title: 'Något stämmer inte',
-  genre: 'Berättande text',
-  goalWords: 120,
-  intro: 'Du och Sam går tillbaka till hela chatten och ser saker ni missat.',
-  story: [
-    'Du och Sam läser igenom hela konversationen med Aiden.',
-    'Nu märker ni detaljer som inte kändes viktiga först.',
-    'Plötsligt känns det som att något inte stämmer alls.'
-  ],
-  callouts: [
-    { type: 'warn', title: 'Meddelande 1', text: '"Hej! Jag heter Aiden. Jag gör ett projekt..."' },
-    { type: 'warn', title: 'Meddelande 2', text: '"Du verkar smart. Jag tror att du förstår mer än andra."' },
-    { type: 'warn', title: 'Meddelande 3', text: '"Vissa vuxna lyssnar ändå inte."' },
-    { type: 'danger', title: 'Meddelande 4', text: '"Vi borde ses." Ett konstigt ord dyker upp och raderas snabbt.' },
-    { type: 'info', title: 'Sam', text: '"Det här känns inte slumpmässigt."' }
-  ],
-  choiceQuestion: 'Vad reagerar du mest på?',
-  choices: [
-    { id: 'A', text: 'Smickret i meddelandena.' },
-    { id: 'B', text: 'Hur Aiden försöker påverka.' },
-    { id: 'C', text: 'Att Aiden vill träffas.' }
-  ],
-  tasks: [
-    {
-      key: 'del1',
-      title: '1. Vad ser ni nu?',
-      help: 'Vad märker ni när ni läser igen?',
-      starters: ['När vi läser igen ser jag att ...', 'Sam märker att ...'],
-      placeholder: 'Skriv 2–4 meningar.'
-    },
-    {
-      key: 'del2',
-      title: '2. Vilka bevis hittar ni?',
-      help: 'Beskriv 2–3 saker som verkar konstiga.',
-      starters: ['Ett bevis är att ...', 'En annan sak är att ...'],
-      placeholder: 'Skriv 4–6 meningar.'
-    },
-    {
-      key: 'del3',
-      title: '3. Vad tänker du nu?',
-      help: 'Vad börjar du förstå?',
-      starters: ['Nu börjar jag tänka att ...', 'Det här kan betyda att ...'],
-      placeholder: 'Skriv 2–4 meningar.'
-    }
-  ],
-},
     {
       id: 5,
       slug: 'kapitel-5.html',
@@ -367,8 +412,6 @@ const DDR = (() => {
     }
   ];
 
-  // ─── State ───────────────────────────────────────────────────────────────────
-
   function loadState() {
     try {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { choices: {}, texts: {}, checks: {} };
@@ -387,8 +430,6 @@ const DDR = (() => {
     showSaveIndicator();
   }
 
-  // ─── Autosave indicator ───────────────────────────────────────────────────────
-
   let saveTimer = null;
   function showSaveIndicator() {
     const el = document.getElementById('save-indicator');
@@ -397,8 +438,6 @@ const DDR = (() => {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => el.classList.remove('visible'), 2000);
   }
-
-  // ─── Helpers ──────────────────────────────────────────────────────────────────
 
   function chapterById(id) {
     return chapters.find(ch => ch.id === id);
@@ -420,7 +459,7 @@ const DDR = (() => {
   }
 
   function getExtraText(chapterId) {
-    return ((state.texts[chapterId] || {})["extra"] || "").trim();
+    return ((state.texts[chapterId] || {})['extra'] || '').trim();
   }
 
   function wordCount(text) {
@@ -437,7 +476,6 @@ const DDR = (() => {
     return ch.checklist.every((_, i) => !!checks[i]);
   }
 
-  // Status: 'empty' | 'ongoing' | 'done'
   function chapterStatus(chapterId) {
     const words = totalWords(chapterId);
     const ch = chapterById(chapterId);
@@ -485,8 +523,6 @@ const DDR = (() => {
     }
   }
 
-  // ─── Nav ──────────────────────────────────────────────────────────────────────
-
   function renderChapterNav(activeId) {
     return chapters.map(ch => `<a class="chapter-link ${ch.id === activeId ? 'active' : ''}" href="${ch.slug}">${ch.id}</a>`).join('');
   }
@@ -494,8 +530,6 @@ const DDR = (() => {
   function renderCallout(callout) {
     return `<div class="callout callout-${callout.type}"><div class="title">${callout.title}</div><div>${callout.text}</div></div>`;
   }
-
-  // ─── Export book (HTML, popup-safe) ──────────────────────────────────────────
 
   function exportBook() {
     const sections = chapters.map(ch => {
@@ -533,8 +567,6 @@ const DDR = (() => {
     downloadBlob(html, 'den-digitala-rosten-bok.html', 'text/html;charset=utf-8');
   }
 
-  // ─── Backup as .txt ───────────────────────────────────────────────────────────
-
   function backupTxt() {
     const lines = [];
     lines.push('DEN DIGITALA RÖSTEN – Textbackup');
@@ -562,8 +594,6 @@ const DDR = (() => {
     downloadBlob(lines.join('\n'), 'den-digitala-rosten-backup.txt', 'text/plain;charset=utf-8');
   }
 
-  // ─── Shared download helper ───────────────────────────────────────────────────
-
   function downloadBlob(content, filename, mimeType) {
     const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
@@ -575,8 +605,6 @@ const DDR = (() => {
     document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 2000);
   }
-
-  // ─── Render home ─────────────────────────────────────────────────────────────
 
   function renderHome() {
     document.getElementById('chapterNav').innerHTML = renderChapterNav(0);
@@ -639,8 +667,6 @@ const DDR = (() => {
         <a class="btn btn-soft" href="kapitel-1.html">Starta med kapitel 1</a>
       </section>`;
   }
-
-  // ─── Render chapter ───────────────────────────────────────────────────────────
 
   function renderChapter(id) {
     const ch = chapterById(id);
@@ -770,13 +796,9 @@ const DDR = (() => {
     updateChapterStats(id);
   }
 
-  // ─── Utilities ────────────────────────────────────────────────────────────────
-
   function escapeHtml(text) {
     return text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   }
-
-  // ─── Public API ───────────────────────────────────────────────────────────────
 
   return {
     init(pageType, chapterId = 0) {
