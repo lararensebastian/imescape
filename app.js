@@ -138,141 +138,99 @@ const DDR = (() => {
       }
     },
     {
-      id: 3,
-      slug: 'kapitel-3.html',
-      title: 'Aiden frågar mer',
-      genre: 'Argumenterande text',
-      goalWords: 120,
-      intro: 'Aiden skriver igen och vill veta vad du tycker om unga, myndigheter och inflytande.',
-      story: [
-        'Det går några dagar. Aiden skriver igen.',
-        'Den här gången handlar frågan mer om åsikter: myndigheter, samhälle och om unga verkligen får påverka.',
-        'Du märker att Sam också börjar undra varför Aiden är så intresserad.'
-      ],
-      callouts: [
-        { type: 'danger', title: 'Ny fråga från Aiden', text: '"Tycker du att unga i Sverige har tillräckligt att säga till om? Inte bara på pappret, utan på riktigt?"' },
-        { type: 'info', title: 'Sam', text: '"Varför frågar den här personen så mycket om just myndigheter och inflytande?"' }
-      ],
-      choiceQuestion: 'Hur mycket delar du?',
-      choices: [
-        { id: 'A', text: 'Jag svarar ordentligt och utvecklar min åsikt.' },
-        { id: 'B', text: 'Jag svarar men håller det ganska generellt.' },
-        { id: 'C', text: 'Jag svarar knappt alls. Det känns obekvämt.' }
-      ],
-      tasks: [
-        {
-          key: 'del1',
-          title: '1. Skriv din tes',
-          help: 'En tes är din tydliga åsikt. Vad tycker du egentligen?',
-          starters: ['Jag anser att ...', 'Jag tycker att ...', 'Min åsikt är att ...'],
-          placeholder: 'Skriv 2–4 meningar där du tydligt visar din åsikt.'
-        },
-        {
-          key: 'del2',
-          title: '2. Bygg med argument',
-          help: 'Använd signalord. Ge minst två skäl och gärna ett exempel.',
-          starters: ['För det första ...', 'Dessutom ...', 'Till exempel ...'],
-          placeholder: 'Skriv 4–6 meningar med argument.'
-        },
-        {
-          key: 'del3',
-          title: '3. Ta med motargument och avslut',
-          help: 'Visa att någon skulle kunna tycka annorlunda. Avsluta sedan tydligt.',
-          starters: ['Å andra sidan ...', 'Vissa tycker att ...', 'Sammanfattningsvis ...'],
-          placeholder: 'Skriv 3–5 meningar som avslutning.'
-        }
-      ],
-      easyHelp: [
-        'Tänk: åsikt – skäl – exempel – avslut.',
-        'Skriv gärna svaret till Aiden som ett citat i din berättelse.',
-        'Du behöver inte skriva svårt. Tydligt är bäst.'
-      ],
-      example: 'Jag anser att unga har viss makt, men inte tillräckligt. För det första lyssnar vuxna ofta först när man blivit äldre. Dessutom är det inte alla unga som vågar säga vad de tycker. Å andra sidan finns elevråd och val. Sammanfattningsvis tycker jag att unga borde få större inflytande på riktigt.',
-      vocab: [
-        ['tes', 'det du vill bevisa'],
-        ['argument', 'skäl som stöder din åsikt'],
-        ['motargument', 'vad någon som tycker annorlunda skulle säga']
-      ],
-      checklist: [
-        'Jag har en tydlig åsikt.',
-        'Jag har minst två argument.',
-        'Jag har avslutat tydligt.'
-      ],
-      extra: {
-        title: 'Extraspår: Skriv Sams argument',
-        prompt: 'Sam tycker tvärtom mot dig i en av dina åsikter. Skriv Sams motargument som ett litet brev eller ett inlägg i en diskussion. Använd tecken som: Å andra sidan, Jag anser att, Däremot.',
-        starters: ['Jag håller inte med. Jag anser att ...', 'Å andra sidan måste man tänka på ...', 'Däremot tror jag att unga ...'],
-        placeholder: 'Skriv 4–6 meningar som Sam, med ett tydligt motargument.'
-      }
+  id: 3,
+  slug: 'kapitel-3.html',
+  title: 'Aiden frågar mer',
+  genre: 'Berättande text',
+  goalWords: 120,
+  intro: 'Aiden skriver igen, men nu känns det annorlunda.',
+  story: [
+    'Det går några dagar. Aiden skriver igen.',
+    'Frågorna handlar fortfarande om åsikter, men nu känns det mer personligt.',
+    'Sam tittar på dig. "Du behöver inte svara på allt", säger hen.'
+  ],
+  callouts: [
+    { type: 'danger', title: 'Ny fråga från Aiden', text: '"Tycker du att unga i Sverige har tillräckligt att säga till om?"' }
+  ],
+  choiceQuestion: 'Hur väljer du att svara?',
+  choices: [
+    { id: 'A', text: 'Jag svarar långt och tydligt med min åsikt.' },
+    { id: 'B', text: 'Jag svarar kort och ganska allmänt.' },
+    { id: 'C', text: 'Jag svarar nästan inte alls eftersom det känns fel.' }
+  ],
+  tasks: [
+    {
+      key: 'del1',
+      title: '1. Visa hur du reagerar',
+      help: 'Vad tänker du när Aiden frågar mer?',
+      starters: ['Jag läser frågan och tänker ...', 'Det känns konstigt att ...', 'Jag vet inte om jag borde ...'],
+      placeholder: 'Skriv 2–4 meningar.'
     },
     {
-      id: 4,
-      slug: 'kapitel-4.html',
-      title: 'Något stämmer inte',
-      genre: 'Instruerande text',
-      goalWords: 120,
-      intro: 'Aiden vill träffas. Du och Sam börjar undersöka kontot.',
-      story: [
-        'Det har gått en vecka. Aiden skriver nästan varje dag nu.',
-        'Sedan kommer ett meddelande om att ses. I samma stund dyker ett konstigt ord upp på ett annat språk.',
-        'Sam säger direkt att ni måste undersöka allt ordentligt.'
-      ],
-      callouts: [
-        { type: 'danger', title: 'Meddelandet', text: '"Vi borde ses och ta en kaffe. Ditt perspektiv är viktigt för projektet." Ett konstigt ord dyker upp och raderas snabbt.' },
-        { type: 'warn', title: 'Varningssignal', text: 'Nu handlar det inte bara om frågor längre. Nu vill Aiden träffas.' }
-      ],
-      choiceQuestion: 'Vad gör du?',
-      choices: [
-        { id: 'A', text: 'Jag tvekar, men Sam vill undersöka kontot.' },
-        { id: 'B', text: 'Sam och jag går igenom allt systematiskt direkt.' },
-        { id: 'C', text: 'Jag kände att det var fel. Nu vill jag ha bevis.' }
-      ],
-      tasks: [
-        {
-          key: 'del1',
-          title: '1. Berätta var ni sitter',
-          help: 'Börja med platsen. Sedan kan den instruerande delen komma.',
-          starters: ['Jag och Sam sitter i ...', 'Sam tar min telefon och ...', 'Vi bestämmer oss för att ...'],
-          placeholder: 'Skriv 2–4 meningar som start.'
-        },
-        {
-          key: 'del2',
-          title: '2. Skriv steg för steg',
-          help: 'Använd numrerade steg eller tydliga ord som först, sedan, till sist.',
-          starters: ['1. Först kollar vi ...', '2. Sedan söker vi ...', '3. Efter det märker vi ...'],
-          placeholder: 'Skriv minst 4 steg där ni undersöker kontot.'
-        },
-        {
-          key: 'del3',
-          title: '3. Avsluta med vad ni förstår',
-          help: 'Vad säger Sam? Hur känns det i dig?',
-          starters: ['Till sist säger Sam ...', 'Nu förstår jag att ...', 'Det känns ...'],
-          placeholder: 'Skriv 2–4 meningar som avslutning.'
-        }
-      ],
-      easyHelp: [
-        'Du får gärna skriva 1, 2, 3, 4 som steg.',
-        'Varje steg ska visa vad ni upptäcker.',
-        'Skriv enkelt och konkret.'
-      ],
-      example: 'Jag och Sam sitter vid köksbordet. Först kollar vi när kontot skapades. Det är bara tre månader gammalt. Sedan söker vi efter samma namn på andra plattformar. Efter det läser vi meddelandena igen och ser konstiga ord. Till sist säger Sam att det här inte verkar vara en riktig person.',
-      vocab: [
-        ['varningssignal', 'något som tyder på att något är fel'],
-        ['undersöka', 'ta reda på mer'],
-        ['systematiskt', 'på ett ordnat sätt']
-      ],
-      checklist: [
-        'Jag har en tydlig plats i början.',
-        'Jag har minst fyra steg.',
-        'Jag visar vad vi upptäcker.'
-      ],
-      extra: {
-        title: 'Extraspår: Skriv instruktionen till någon annan',
-        prompt: 'Du ska förklara för en yngre elev hur man undersöker ett okänt konto online. Skriv en kort guide med tydliga steg – som om du pratar direkt till den eleven.',
-        starters: ['Om du får ett meddelande från någon du inte känner, gör så här:', '1. Börja med att ...', 'Det viktigaste är att aldrig ...'],
-        placeholder: 'Skriv en guide med minst 4 steg, riktad till en yngre elev.'
-      }
+      key: 'del2',
+      title: '2. Skriv ditt svar',
+      help: 'Anpassa efter ditt val (långt, kort eller inget).',
+      starters: ['Jag skriver: "..."', 'Jag svarar kort: "..."', 'Jag skriver inget, men tänker att ...'],
+      placeholder: 'Skriv det svar du skickar.'
     },
+    {
+      key: 'del3',
+      title: '3. Avsluta',
+      help: 'Hur känns det efteråt?',
+      starters: ['Efteråt känner jag ...', 'Nu tänker jag att ...'],
+      placeholder: 'Skriv 2–4 meningar.'
+    }
+  ],
+}
+  {
+  id: 4,
+  slug: 'kapitel-4.html',
+  title: 'Något stämmer inte',
+  genre: 'Berättande text',
+  goalWords: 120,
+  intro: 'Du och Sam går tillbaka till hela chatten och ser saker ni missat.',
+  story: [
+    'Du och Sam läser igenom hela konversationen med Aiden.',
+    'Nu märker ni detaljer som inte kändes viktiga först.',
+    'Plötsligt känns det som att något inte stämmer alls.'
+  ],
+  callouts: [
+    { type: 'warn', title: 'Meddelande 1', text: '"Hej! Jag heter Aiden. Jag gör ett projekt..."' },
+    { type: 'warn', title: 'Meddelande 2', text: '"Du verkar smart. Jag tror att du förstår mer än andra."' },
+    { type: 'warn', title: 'Meddelande 3', text: '"Vissa vuxna lyssnar ändå inte."' },
+    { type: 'danger', title: 'Meddelande 4', text: '"Vi borde ses." Ett konstigt ord dyker upp och raderas snabbt.' },
+    { type: 'info', title: 'Sam', text: '"Det här känns inte slumpmässigt."' }
+  ],
+  choiceQuestion: 'Vad reagerar du mest på?',
+  choices: [
+    { id: 'A', text: 'Smickret i meddelandena.' },
+    { id: 'B', text: 'Hur Aiden försöker påverka.' },
+    { id: 'C', text: 'Att Aiden vill träffas.' }
+  ],
+  tasks: [
+    {
+      key: 'del1',
+      title: '1. Vad ser ni nu?',
+      help: 'Vad märker ni när ni läser igen?',
+      starters: ['När vi läser igen ser jag att ...', 'Sam märker att ...'],
+      placeholder: 'Skriv 2–4 meningar.'
+    },
+    {
+      key: 'del2',
+      title: '2. Vilka bevis hittar ni?',
+      help: 'Beskriv 2–3 saker som verkar konstiga.',
+      starters: ['Ett bevis är att ...', 'En annan sak är att ...'],
+      placeholder: 'Skriv 4–6 meningar.'
+    },
+    {
+      key: 'del3',
+      title: '3. Vad tänker du nu?',
+      help: 'Vad börjar du förstå?',
+      starters: ['Nu börjar jag tänka att ...', 'Det här kan betyda att ...'],
+      placeholder: 'Skriv 2–4 meningar.'
+    }
+  ],
+}
     {
       id: 5,
       slug: 'kapitel-5.html',
