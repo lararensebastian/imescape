@@ -181,7 +181,7 @@ const DDR = (() => {
       placeholder: 'Skriv 2–4 meningar.'
     }
   ],
-}
+},
   {
   id: 4,
   slug: 'kapitel-4.html',
@@ -230,7 +230,7 @@ const DDR = (() => {
       placeholder: 'Skriv 2–4 meningar.'
     }
   ],
-}
+},
     {
       id: 5,
       slug: 'kapitel-5.html',
