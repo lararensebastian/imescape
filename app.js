@@ -294,8 +294,8 @@ const DDR = (() => {
       choiceQuestion: 'Hur reagerar du?',
       choices: [
         { id: 'A', text: 'Jag blir arg och lite skamsen.' },
-        { id: 'B', text: 'Jag vill förstå exakt hur det fungerade.' },
-        { id: 'C', text: 'Jag blir lättad över att magkänslan hade rätt.' }
+        { id: 'B', text: 'Jag vill förstå exakt hur det fungerade och vem som ligger bakom.' },
+        { id: 'C', text: 'Jag blir lättad över att din magkänsla var rätt.' }
       ],
       tasks: [
         {
@@ -303,25 +303,25 @@ const DDR = (() => {
           title: '1. Starta dialogen',
           help: 'Skriv direkt med repliker. En ny replik på varje ny rad.',
           starters: ['– Det här är inte en riktig person, säger Sam.', '– Vad menar du? säger jag.', '– Titta här, säger Sam.'],
-          placeholder: 'Skriv 4–6 repliker mellan dig och Sam.'
+          placeholder: 'Skriv 6–8 repliker mellan dig och Sam.'
         },
         {
           key: 'del2',
           title: '2. Lägg in paus och reaktion',
           help: 'Allt behöver inte vara prat. Beskriv en tystnad, en blick eller en känsla.',
           starters: ['Det blir tyst en stund ...', 'Jag tittar på skärmen och ...', 'Sam säger lågt ...'],
-          placeholder: 'Skriv 3–5 meningar mellan eller efter replikerna.'
+          placeholder: 'Skriv 4–5 meningar mellan eller efter replikerna.'
         },
         {
           key: 'del3',
           title: '3. Reflektera',
           help: 'Vad var syftet? Vad kunde ha hänt om du fortsatt?',
           starters: ['Jag tror att syftet var ...', 'Om jag hade fortsatt kanske ...', 'Det konstigaste är att ...'],
-          placeholder: 'Skriv 3–5 meningar som reflektion.'
+          placeholder: 'Skriv 4–5 meningar som reflektion.'
         }
       ],
       easyHelp: [
-        'Använd tankstreck före repliker: –',
+        'Använd talstreck före repliker: –',
         'Varva prat och känslor.',
         'Du kan skriva kort men tydligt.'
       ],
@@ -332,7 +332,7 @@ const DDR = (() => {
         ['reflektion', 'när du tänker efter och förstår mer']
       ],
       checklist: [
-        'Jag har skrivit dialog med tankstreck.',
+        'Jag har skrivit dialog med talstreck.',
         'Jag har med en paus eller tystnad.',
         'Jag har reflekterat över syftet.'
       ],
