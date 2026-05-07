@@ -377,7 +377,7 @@ const DDR = (() => {
           title: '2. Skriv din varning eller förklaring',
           help: 'Skriv tydligt vad andra borde tänka på. Använd gärna tes och argument igen.',
           starters: ['Det farligaste är att ...', 'För det första ...', 'Dessutom ...'],
-          placeholder: 'Skriv 4–6 meningar med tydlig varning eller förklaring.'
+          placeholder: 'Skriv 6–10 meningar med tydlig varning eller förklaring.'
         },
         {
           key: 'del3',
